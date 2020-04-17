@@ -1,0 +1,4 @@
+rootProject.name = 'rita-server'
+
+include 'rita-api'
+include 'rita-jpa'

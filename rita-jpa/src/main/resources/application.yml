@@ -1,0 +1,30 @@
+spring:
+  profiles:
+    active: dev
+
+  #  jackson:
+  #    date-format: yyyy-MM-dd HH:mm:ss
+  #    time-zone: Asia/Shanghai
+  mail:
+    host: ${SPRING_MAIL_HOST}
+    port: 465
+    username: ${SPRING_MAIL_USERNAME}
+    password: ${SPRING_MAIL_PASSWORD}
+    properties:
+      smtp:
+        auth: true
+        starttls:
+          enable: true
+          required: true
+      mail:
+        smtp:
+          ssl:
+            enable: true
+
+app:
+  auth:
+    max-age:
+      # 10 * 60 * 1000
+      register-access-token: 600000
+      password-reset-access-token: 600000
+

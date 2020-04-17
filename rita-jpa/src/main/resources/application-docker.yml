@@ -1,0 +1,26 @@
+spring:
+  redis:
+    host: redis
+    port: 6379
+  datasource:
+    url: jdbc:mysql://mysql:3306/rita
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: false
+    generate-ddl: false
+
+  security:
+    jwt:
+      secret-key: 78acb552-3508-4e9c-b119-61cb0ac63f05
+      # 1000 * 3600 * 24 * 3
+      max-age: 259200000
+      orderly-anonymous-inspections:
+        - permitted-urls:
+            - /**
+        - authenticated-urls:
+            - /api/v1/**
+        - permitted-urls:
+            - /*/*/auth/**
+            - /*/*/face/**
